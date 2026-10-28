@@ -1,0 +1,18 @@
+Verdict: INCORRECT
+Pose judged: Goddess Pose (Utkata Konasana)  (selected by you)
+Alignment score: 50/100
+Mode: hybrid   Leniency: lenient
+Pose scores: other 0.83, triangle 0.07, goddess 0.05, warrior2 0.03, tree 0.03
+
+What to fix:
+  - Lift your upper arms to shoulder height.
+  - Widen your stance with the toes turned out.
+  - Bend your elbows to about 90 degrees (cactus arms).
+
+Measurements for Goddess Pose (Utkata Konasana):
+  straighter knee angle                              132°   target <= 135°                  OK
+  difference between knees                             5°   target <= 22°                   OK
+  stance width (torso lengths)                       0.72   target >= 1.40                  OUT
+  arm height, left / right shoulder angle     145° / 150°   target 70-110°                  OUT
+  elbow angles, left / right                  156° / 158°   target 70-110°                  OUT
+  torso lean from vertical                             2°   target <= 10°                   OK

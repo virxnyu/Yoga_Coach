@@ -1,0 +1,14 @@
+Verdict: CORRECT
+Pose judged: Tree Pose (Vrikshasana)  (auto-detected)
+Alignment score: 100/100
+Mode: hybrid   Leniency: lenient
+Pose scores: other 0.84, tree 0.42, warrior2 0.30, triangle 0.11, goddess 0.09
+
+Great alignment - hold the pose and breathe.
+
+Measurements for Tree Pose (Vrikshasana):
+  standing-leg knee angle                            180°   target >= 165°                  OK
+  lifted-leg knee angle                               44°   target <= 100°                  OK
+  wrists above nose (torso lengths)                  0.56   target >= 0.10                  OK
+  smaller elbow angle                                151°   target >= 150°                  OK
+  torso lean from vertical                             4°   target <= 10°                   OK

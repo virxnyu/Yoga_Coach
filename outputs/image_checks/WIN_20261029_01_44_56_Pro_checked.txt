@@ -1,0 +1,12 @@
+Verdict: NO TARGET POSE RECOGNISED
+Mode: hybrid   Leniency: lenient
+Pose scores: other 0.84, tree 0.25, goddess 0.23, warrior2 0.21, triangle 0.12
+
+No target pose recognised - get into Tree, Warrior II, Triangle or Goddess.
+
+Measurements for Tree Pose (Vrikshasana):
+  standing-leg knee angle                            132°   target >= 165°                  OUT
+  lifted-leg knee angle                              128°   target <= 100°                  OUT
+  wrists above nose (torso lengths)                  0.52   target >= 0.10                  OK
+  smaller elbow angle                                155°   target >= 150°                  OK
+  torso lean from vertical                             1°   target <= 10°                   OK

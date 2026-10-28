@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yoga Image Checker</title>
+<style>
+:root{--bg:#12151a;--card:#1b2028;--line:#2b323d;--txt:#e8ebf0;--mut:#9aa4b2;--ok:#4cc364;--bad:#ef5350;--warn:#f5b041;--acc:#5aa9ff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--txt);font:15px/1.45 system-ui,Segoe UI,Roboto,sans-serif}
+header{padding:18px 24px;border-bottom:1px solid var(--line)}
+h1{margin:0;font-size:20px} header p{margin:4px 0 0;color:var(--mut);font-size:13px}
+main{display:grid;grid-template-columns:340px 1fr;gap:18px;padding:18px 24px;max-width:1500px;margin:auto}
+@media(max-width:950px){main{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
+label{display:block;font-size:12px;color:var(--mut);margin:10px 0 4px}
+select{width:100%;padding:8px;background:#10141a;color:var(--txt);border:1px solid var(--line);border-radius:8px}
+#drop{border:2px dashed #3a4452;border-radius:12px;padding:26px 12px;text-align:center;color:var(--mut);cursor:pointer;transition:.15s}
+#drop.over{border-color:var(--acc);color:var(--txt);background:#172230}
+#drop b{color:var(--txt)}
+button{background:var(--acc);color:#06121f;border:0;border-radius:8px;padding:9px 14px;font-weight:600;cursor:pointer}
+#list{display:flex;flex-direction:column;gap:8px;margin-top:12px;max-height:46vh;overflow:auto}
+.item{display:flex;gap:10px;align-items:center;padding:6px;border:1px solid var(--line);border-radius:10px;cursor:pointer;background:#10141a}
+.item.sel{border-color:var(--acc)} .item img{width:54px;height:54px;object-fit:cover;border-radius:6px}
+.item .n{font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:170px}
+.badge{font-size:11px;font-weight:700;padding:2px 7px;border-radius:99px;color:#08140c}
+.correct{background:var(--ok)} .incorrect{background:var(--bad);color:#fff} .wrong_pose,.no_person,.busy{background:var(--warn)}
+#out{display:none;grid-template-columns:minmax(260px,1.1fr) 1fr;gap:16px}
+@media(max-width:1200px){#out{grid-template-columns:1fr}}
+#out img{width:100%;border-radius:10px;border:1px solid var(--line)}
+.verdict{font-size:22px;font-weight:800;margin:0 0 4px}
+.v-correct{color:var(--ok)} .v-incorrect{color:var(--bad)} .v-wrong_pose,.v-no_person{color:var(--warn)}
+ul{margin:6px 0 10px;padding-left:20px} li{margin:3px 0}
+table{width:100%;border-collapse:collapse;font-size:13px;margin-top:6px}
+th,td{padding:6px 8px;border-bottom:1px solid var(--line);text-align:left} th{color:var(--mut);font-weight:600}
+td.OK{color:var(--ok)} td.OUT{color:var(--bad);font-weight:700} td.tol{color:var(--warn)}
+.warn{background:#2a2312;border:1px solid #5a4a1c;color:#f3d28a;border-radius:8px;padding:7px 10px;margin:6px 0;font-size:13px}
+.mut{color:var(--mut);font-size:13px} .probs span{display:inline-block;margin-right:12px}
+.tips{font-size:12.5px;color:var(--mut)} .tips li{margin:2px 0}
+</style>
+</head>
+<body>
+<header>
+  <h1>Yoga Image Checker</h1>
+  <p>Upload photos to see exactly what the model decides, with the measured angles behind it. Runs fully on your computer.</p>
+</header>
+<main>
+  <section class="card">
+    <div id="drop"><b>Drop images here</b><br>or click to choose<br><span class="mut">you can also paste with Ctrl+V</span></div>
+    <input id="file" type="file" accept="image/*" multiple hidden>
+    <label>Pose to judge</label>
+    <select id="pose">
+      <option value="auto">Auto-detect</option><option value="tree">Tree</option><option value="warrior2">Warrior II</option>
+      <option value="triangle">Triangle</option><option value="goddess">Goddess</option>
+    </select>
+    <label>Leniency</label>
+    <select id="leniency">
+      <option value="lenient" selected>Lenient (default)</option><option value="normal">Normal</option><option value="strict">Strict</option>
+    </select>
+    <label>Decision mode</label>
+    <select id="mode">
+      <option value="hybrid" selected>Hybrid (network + rules)</option><option value="dl">Network only</option><option value="rules">Rules only</option>
+    </select>
+    <div style="margin-top:12px"><button id="rerun">Re-check all with these settings</button></div>
+    <div id="list"></div>
+    <ul class="tips">
+      <li>Best: one person, whole body visible, facing the camera, plain background.</li>
+      <li>Side-view or cropped photos can give wrong results.</li>
+    </ul>
+  </section>
+  <section>
+    <div id="empty" class="card mut">No image yet. Drop one on the left.</div>
+    <div id="out" class="card">
+      <div><img id="img" alt="result"></div>
+      <div>
+        <p id="verdict" class="verdict"></p>
+        <div id="sub" class="mut"></div>
+        <div id="warnings"></div>
+        <div id="fb"></div>
+        <div id="probs" class="mut probs"></div>
+        <table id="tbl"></table>
+      </div>
+    </div>
+  </section>
+</main>
+<script>
+const $=id=>document.getElementById(id);
+let items=[]; let sel=-1;
+const drop=$('drop'), fileIn=$('file');
+drop.onclick=()=>fileIn.click();
+['dragenter','dragover'].forEach(e=>drop.addEventListener(e,ev=>{ev.preventDefault();drop.classList.add('over')}));
+['dragleave','drop'].forEach(e=>drop.addEventListener(e,ev=>{ev.preventDefault();drop.classList.remove('over')}));
+drop.addEventListener('drop',ev=>addFiles(ev.dataTransfer.files));
+fileIn.onchange=()=>{addFiles(fileIn.files);fileIn.value=''};
+document.addEventListener('paste',ev=>{const f=[...(ev.clipboardData?.files||[])].filter(x=>x.type.startsWith('image/'));if(f.length)addFiles(f)});
+['pose','leniency','mode'].forEach(id=>$(id).onchange=()=>{ if(sel>=0) run(sel)});
+$('rerun').onclick=()=>items.forEach((_,i)=>run(i));
+
+function addFiles(fl){
+  [...fl].filter(f=>f.type.startsWith('image/')||/\.(jpe?g|png|bmp|webp)$/i.test(f.name)).forEach(f=>{
+    items.push({file:f,url:URL.createObjectURL(f),res:null,busy:false}); run(items.length-1);
+  });
+  if(sel<0&&items.length) select(0);
+}
+async function run(i){
+  const it=items[i]; it.busy=true; renderList();
+  const q=new URLSearchParams({pose:$('pose').value,leniency:$('leniency').value,mode:$('mode').value,name:it.file.name});
+  try{
+    const r=await fetch('/analyze?'+q,{method:'POST',body:it.file});
+    it.res=await r.json();
+  }catch(e){it.res={status:'no_person',error:String(e),text:'Request failed: '+e,warnings:[],rows:[],feedback:[],probs:{}}}
+  it.busy=false; renderList(); if(i===sel) show();
+}
+function select(i){sel=i;renderList();show()}
+function renderList(){
+  $('list').innerHTML='';
+  items.forEach((it,i)=>{
+    const d=document.createElement('div'); d.className='item'+(i===sel?' sel':''); d.onclick=()=>select(i);
+    const st=it.busy?'busy':(it.res?it.res.status:'busy');
+    const label=it.busy?'checking...':(it.res?({correct:'CORRECT',incorrect:'INCORRECT',wrong_pose:'NO POSE',no_person:'NO BODY'}[it.res.status]||it.res.status):'...');
+    d.innerHTML=`<img src="${it.url}"><div><div class="n">${it.file.name}</div><span class="badge ${st}">${label}</span></div>`;
+    $('list').appendChild(d);
+  });
+}
+function esc(s){return String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))}
+function show(){
+  const it=items[sel]; if(!it||!it.res){return}
+  const r=it.res; $('empty').style.display='none'; $('out').style.display='grid';
+  $('img').src=r.image||it.url;
+  const title={correct:'CORRECT',incorrect:'INCORRECT',wrong_pose:'NO TARGET POSE RECOGNISED',no_person:'NO BODY DETECTED'}[r.status]||r.status;
+  $('verdict').className='verdict v-'+r.status; $('verdict').textContent=title;
+  $('sub').textContent=(r.pose_title?r.pose_title+' | ':'')+(r.score!=null?'alignment '+Math.round(r.score)+'/100 | ':'')+'leniency '+r.leniency+' | mode '+r.mode;
+  $('warnings').innerHTML=(r.warnings||[]).map(w=>`<div class="warn">${esc(w)}</div>`).join('');
+  let fb='';
+  if(r.status==='incorrect') fb='<b>What to fix</b><ul>'+r.feedback.map(x=>`<li>${esc(x)}</li>`).join('')+'</ul>';
+  else if(r.feedback&&r.feedback.length) fb='<p>'+r.feedback.map(esc).join(' ')+'</p>';
+  else if(r.status==='no_person') fb='<p>'+esc(r.text)+'</p>';
+  $('fb').innerHTML=fb;
+  $('probs').innerHTML=Object.entries(r.probs||{}).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`<span>${k}: ${v.toFixed?v.toFixed(2):v}</span>`).join('');
+  const rows=r.rows||[];
+  $('tbl').innerHTML=rows.length?'<tr><th>Measurement'+(r.pose_title?' ('+esc(r.pose_title.split(' (')[0])+')':'')+'</th><th>Value</th><th>Target</th><th></th></tr>'+
+    rows.map(x=>`<tr><td>${esc(x.label)}</td><td>${esc(x.value)}</td><td>${esc(x.target)}</td><td class="${x.status==='OK'?'OK':x.status==='OUT'?'OUT':'tol'}">${esc(x.status)}</td></tr>`).join(''):'';
+}
+</script>
+</body>
+</html>

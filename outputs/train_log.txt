@@ -1,0 +1,60 @@
+== generating synthetic data (seed 0) ==
+train 37500  val 3000  test 4000  test_noisy 4000  (97.9s)
+train label balance:
+  tree      n=7500 correct=41% errors={'straight_knee_bent': 1624, 'bent_knee_shallow': 1596, 'arms_low': 1715, 'elbows_bent': 1432, 'torso_lean': 1809}
+  warrior2  n=7500 correct=25% errors={'straight_knee_bent': 1628, 'bent_knee_shallow': 2934, 'arms_not_level': 4610, 'elbows_bent': 1933, 'torso_lean': 2538, 'stance_narrow': 1701}
+  triangle  n=7500 correct=48% errors={'straight_knee_bent': 1110, 'stance_narrow': 1556, 'lean_insufficient': 1225, 'arms_not_stacked': 1520, 'elbows_bent': 1513}
+  goddess   n=7500 correct=41% errors={'bent_knee_shallow': 3132, 'knees_uneven': 751, 'stance_narrow': 1948, 'arms_not_level': 2904, 'elbow_angle_wrong': 1608, 'torso_lean': 1560}
+  other     n=7500
+real clips: 223 files, 446 windows (train 314)
+model parameters: 230,751
+epoch 01  train 1.6597  val 1.0405  pose-acc 0.915  err-microF1 0.581  (196s)
+epoch 02  train 0.9154  val 0.7576  pose-acc 0.947  err-microF1 0.751  (247s)
+epoch 03  train 0.6828  val 0.5576  pose-acc 0.956  err-microF1 0.855  (374s)
+epoch 04  train 0.5603  val 0.5232  pose-acc 0.959  err-microF1 0.873  (511s)
+epoch 05  train 0.4838  val 0.4501  pose-acc 0.963  err-microF1 0.935  (596s)
+epoch 06  train 0.4239  val 0.4347  pose-acc 0.973  err-microF1 0.929  (612s)
+epoch 07  train 0.3851  val 0.3401  pose-acc 0.977  err-microF1 0.975  (637s)
+epoch 08  train 0.3667  val 0.3313  pose-acc 0.975  err-microF1 0.982  (652s)
+epoch 09  train 0.3517  val 0.4365  pose-acc 0.974  err-microF1 0.934  (700s)
+epoch 10  train 0.3338  val 0.3785  pose-acc 0.980  err-microF1 0.967  (714s)
+epoch 11  train 0.3205  val 0.3020  pose-acc 0.984  err-microF1 0.985  (733s)
+epoch 12  train 0.3067  val 0.3280  pose-acc 0.983  err-microF1 0.979  (758s)
+epoch 13  train 0.2989  val 0.2887  pose-acc 0.987  err-microF1 0.989  (784s)
+epoch 14  train 0.2885  val 0.2781  pose-acc 0.988  err-microF1 0.991  (810s)
+epoch 15  train 0.2788  val 0.2932  pose-acc 0.984  err-microF1 0.988  (836s)
+epoch 16  train 0.2744  val 0.2719  pose-acc 0.985  err-microF1 0.993  (861s)
+epoch 17  train 0.2658  val 0.2621  pose-acc 0.991  err-microF1 0.993  (886s)
+epoch 18  train 0.2593  val 0.2603  pose-acc 0.992  err-microF1 0.995  (911s)
+epoch 19  train 0.2563  val 0.2576  pose-acc 0.990  err-microF1 0.996  (937s)
+epoch 20  train 0.2510  val 0.2575  pose-acc 0.990  err-microF1 0.996  (961s)
+epoch 21  train 0.2444  val 0.2552  pose-acc 0.991  err-microF1 0.996  (987s)
+epoch 22  train 0.2444  val 0.2498  pose-acc 0.993  err-microF1 0.998  (1013s)
+epoch 23  train 0.2398  val 0.2458  pose-acc 0.992  err-microF1 0.998  (1039s)
+epoch 24  train 0.2366  val 0.2465  pose-acc 0.992  err-microF1 0.998  (1064s)
+epoch 25  train 0.2347  val 0.2453  pose-acc 0.992  err-microF1 0.998  (1089s)
+epoch 26  train 0.2338  val 0.2450  pose-acc 0.992  err-microF1 0.999  (1115s)
+epoch 27  train 0.2329  val 0.2433  pose-acc 0.993  err-microF1 0.999  (1144s)
+epoch 28  train 0.2325  val 0.2443  pose-acc 0.992  err-microF1 0.999  (1169s)
+epoch 29  train 0.2322  val 0.2445  pose-acc 0.992  err-microF1 0.999  (1194s)
+epoch 30  train 0.2321  val 0.2445  pose-acc 0.992  err-microF1 0.999  (1219s)
+
+[synthetic_test] n=4000  pose acc=0.993  pose macroF1=0.993
+   errors_dl                   microF1=0.999 macroF1=0.999 correct/incorrect acc=1.000 F1(incorrect)=1.000
+   errors_rules_single_frame   microF1=0.989 macroF1=0.990 correct/incorrect acc=0.985 F1(incorrect)=0.988
+   errors_rules_window         microF1=1.000 macroF1=1.000 correct/incorrect acc=1.000 F1(incorrect)=1.000
+   errors_hybrid               microF1=0.999 macroF1=0.999 correct/incorrect acc=1.000 F1(incorrect)=1.000
+
+[synthetic_test_noisy] n=4000  pose acc=0.992  pose macroF1=0.992
+   errors_dl                   microF1=0.993 macroF1=0.995 correct/incorrect acc=0.997 F1(incorrect)=0.998
+   errors_rules_single_frame   microF1=0.892 macroF1=0.892 correct/incorrect acc=0.874 F1(incorrect)=0.906
+   errors_rules_window         microF1=0.997 macroF1=0.998 correct/incorrect acc=0.995 F1(incorrect)=0.996
+   errors_hybrid               microF1=0.995 macroF1=0.996 correct/incorrect acc=0.998 F1(incorrect)=0.998
+
+[real_test] n=66  pose acc=1.000  pose macroF1=0.800
+   errors_dl                   microF1=0.000 macroF1=0.000 correct/incorrect acc=0.985 F1(incorrect)=0.000
+   errors_rules_single_frame   microF1=0.000 macroF1=0.000 correct/incorrect acc=0.545 F1(incorrect)=0.000
+   errors_rules_window         microF1=0.000 macroF1=0.000 correct/incorrect acc=0.545 F1(incorrect)=0.000
+   errors_hybrid               microF1=0.000 macroF1=0.000 correct/incorrect acc=0.985 F1(incorrect)=0.000
+
+saved models/yogacoach.pt, outputs/metrics.json and plots  (total 1224s)

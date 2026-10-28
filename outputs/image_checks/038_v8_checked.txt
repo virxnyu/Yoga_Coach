@@ -1,0 +1,14 @@
+Verdict: CORRECT
+Pose judged: Triangle Pose (Trikonasana)  (selected by you)
+Alignment score: 0/100
+Mode: hybrid   Leniency: lenient
+Pose scores: tree 0.96, goddess 0.01, other 0.01, warrior2 0.01, triangle 0.01
+
+Great alignment - hold the pose and breathe.
+
+Measurements for Triangle Pose (Trikonasana):
+  weaker knee angle                                   63°   target >= 160°                  OUT
+  stance width (torso lengths)                       1.01   target >= 1.60                  OUT
+  torso lean from vertical                             1°   target >= 35°                   OUT
+  wrist line vs vertical                              80°   target <= 22°                   OUT
+  smaller elbow angle                                132°   target >= 160°                  OUT

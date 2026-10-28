@@ -1,0 +1,1232 @@
+{
+  "history": {
+    "train_loss": [
+      1.6597414768599217,
+      0.9154426416540458,
+      0.6827967602248285,
+      0.560305127813146,
+      0.4838271076772727,
+      0.4238613481615104,
+      0.38511547787127154,
+      0.36666279300755145,
+      0.35171321014952817,
+      0.33379657858727024,
+      0.3204726248589996,
+      0.30670784292073033,
+      0.2989290910803415,
+      0.28853608935681824,
+      0.2788435287919699,
+      0.27440813617184273,
+      0.2657780561571807,
+      0.2593347710721633,
+      0.25630054208967423,
+      0.25098298981883166,
+      0.24439404159784317,
+      0.2443827098978111,
+      0.23984612490421806,
+      0.23659982673482957,
+      0.23473024124803107,
+      0.23380526052970513,
+      0.232945754393643,
+      0.23247475644537047,
+      0.23218797415105347,
+      0.23212290316625359
+    ],
+    "val_loss": [
+      1.0404820442199707,
+      0.7575581073760986,
+      0.557579755783081,
+      0.5232496857643127,
+      0.45013025403022766,
+      0.43465685844421387,
+      0.34007686376571655,
+      0.33128049969673157,
+      0.4365025460720062,
+      0.37847423553466797,
+      0.3020167946815491,
+      0.3280082643032074,
+      0.28865954279899597,
+      0.27811819314956665,
+      0.29320839047431946,
+      0.271853506565094,
+      0.26211076974868774,
+      0.26027828454971313,
+      0.2576296329498291,
+      0.2574917674064636,
+      0.25516456365585327,
+      0.2498340755701065,
+      0.24578723311424255,
+      0.24650701880455017,
+      0.2452789694070816,
+      0.24497678875923157,
+      0.24326467514038086,
+      0.24426715075969696,
+      0.2445206344127655,
+      0.2444532811641693
+    ],
+    "val_pose_acc": [
+      0.9145466685295105,
+      0.9468362927436829,
+      0.9556425213813782,
+      0.9592302441596985,
+      0.9634703397750854,
+      0.9726027250289917,
+      0.976516604423523,
+      0.9752119779586792,
+      0.9739073514938354,
+      0.9797782301902771,
+      0.9843444228172302,
+      0.9833659529685974,
+      0.9866275191307068,
+      0.9879321455955505,
+      0.9836921095848083,
+      0.9846705794334412,
+      0.990541398525238,
+      0.9915198683738708,
+      0.9895629286766052,
+      0.9902152419090271,
+      0.9911937117576599,
+      0.9931507110595703,
+      0.9915198683738708,
+      0.9924983978271484,
+      0.9924983978271484,
+      0.9924983978271484,
+      0.9934768676757812,
+      0.9915198683738708,
+      0.9918460249900818,
+      0.9918460249900818
+    ],
+    "val_err_f1": [
+      0.580991124260355,
+      0.7505036937541973,
+      0.8553419476835802,
+      0.8732800000000001,
+      0.9352869352869353,
+      0.9291817523533672,
+      0.974660633484163,
+      0.981954887218045,
+      0.9344737605102927,
+      0.9667581579749924,
+      0.9851685393258427,
+      0.9788742798049933,
+      0.9885739723994658,
+      0.9905561385099685,
+      0.9884816753926702,
+      0.9934484812388327,
+      0.9934367541766109,
+      0.9947877885331349,
+      0.9959767545820296,
+      0.9961251862891208,
+      0.9958283671036948,
+      0.9976162097735399,
+      0.9983618763961281,
+      0.9983628516148236,
+      0.9979135618479881,
+      0.9986597170513775,
+      0.9986597170513775,
+      0.9986597170513775,
+      0.9986597170513775,
+      0.9986597170513775
+    ]
+  },
+  "results": {
+    "synthetic_test": {
+      "name": "synthetic_test (noise x1.4)",
+      "n": 4000,
+      "pose": {
+        "accuracy": 0.993,
+        "macro_f1": 0.9930026369190672,
+        "confusion": [
+          [
+            798,
+            2,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            792,
+            1,
+            3,
+            4
+          ],
+          [
+            0,
+            1,
+            799,
+            0,
+            0
+          ],
+          [
+            0,
+            5,
+            0,
+            790,
+            5
+          ],
+          [
+            0,
+            3,
+            0,
+            4,
+            793
+          ]
+        ]
+      },
+      "errors_dl": {
+        "micro_f1": 0.9986824769433466,
+        "macro_f1": 0.9988953940983673,
+        "exact_match": 0.99625,
+        "correct_vs_incorrect": {
+          "accuracy": 0.9996875,
+          "precision_incorrect": 0.9994969818913481,
+          "recall_incorrect": 1.0,
+          "f1_incorrect": 0.999748427672956
+        },
+        "per_error": {
+          "straight_knee_bent": {
+            "precision": 0.9977777777777778,
+            "recall": 1.0,
+            "f1": 0.9988876529477196,
+            "support": 449
+          },
+          "bent_knee_shallow": {
+            "precision": 0.9976608187134502,
+            "recall": 0.9976608187134502,
+            "f1": 0.9976608187134502,
+            "support": 855
+          },
+          "arms_low": {
+            "precision": 1.0,
+            "recall": 0.9947368421052631,
+            "f1": 0.9973614775725593,
+            "support": 190
+          },
+          "arms_not_level": {
+            "precision": 0.9974619289340102,
+            "recall": 0.9974619289340102,
+            "f1": 0.9974619289340102,
+            "support": 788
+          },
+          "elbows_bent": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 530
+          },
+          "torso_lean": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 629
+          },
+          "stance_narrow": {
+            "precision": 0.9981785063752276,
+            "recall": 1.0,
+            "f1": 0.999088422971741,
+            "support": 548
+          },
+          "lean_insufficient": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 129
+          },
+          "arms_not_stacked": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 162
+          },
+          "knees_uneven": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 82
+          },
+          "elbow_angle_wrong": {
+            "precision": 1.0,
+            "recall": 0.9947916666666666,
+            "f1": 0.9973890339425587,
+            "support": 192
+          }
+        }
+      },
+      "errors_rules_window": {
+        "micro_f1": 0.9998902184652542,
+        "macro_f1": 0.999942353144636,
+        "exact_match": 0.9996875,
+        "correct_vs_incorrect": {
+          "accuracy": 0.9996875,
+          "precision_incorrect": 0.9994969818913481,
+          "recall_incorrect": 1.0,
+          "f1_incorrect": 0.999748427672956
+        },
+        "per_error": {
+          "straight_knee_bent": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 449
+          },
+          "bent_knee_shallow": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 855
+          },
+          "arms_low": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 190
+          },
+          "arms_not_level": {
+            "precision": 0.9987325728770595,
+            "recall": 1.0,
+            "f1": 0.9993658845909955,
+            "support": 788
+          },
+          "elbows_bent": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 530
+          },
+          "torso_lean": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 629
+          },
+          "stance_narrow": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 548
+          },
+          "lean_insufficient": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 129
+          },
+          "arms_not_stacked": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 162
+          },
+          "knees_uneven": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 82
+          },
+          "elbow_angle_wrong": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 192
+          }
+        }
+      },
+      "errors_rules_single_frame": {
+        "micro_f1": 0.9888031307750842,
+        "macro_f1": 0.9897236674998634,
+        "exact_match": 0.97,
+        "correct_vs_incorrect": {
+          "accuracy": 0.9846875,
+          "precision_incorrect": 0.9759332023575639,
+          "recall_incorrect": 1.0,
+          "f1_incorrect": 0.9878200347999005
+        },
+        "per_error": {
+          "straight_knee_bent": {
+            "precision": 0.9781659388646288,
+            "recall": 0.9977728285077951,
+            "f1": 0.9878721058434399,
+            "support": 449
+          },
+          "bent_knee_shallow": {
+            "precision": 0.9953434225844005,
+            "recall": 1.0,
+            "f1": 0.9976662777129521,
+            "support": 855
+          },
+          "arms_low": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 190
+          },
+          "arms_not_level": {
+            "precision": 0.9538834951456311,
+            "recall": 0.9974619289340102,
+            "f1": 0.9751861042183624,
+            "support": 788
+          },
+          "elbows_bent": {
+            "precision": 0.9362831858407079,
+            "recall": 0.9981132075471698,
+            "f1": 0.9662100456621003,
+            "support": 530
+          },
+          "torso_lean": {
+            "precision": 0.9984126984126984,
+            "recall": 1.0,
+            "f1": 0.9992057188244639,
+            "support": 629
+          },
+          "stance_narrow": {
+            "precision": 1.0,
+            "recall": 0.9981751824817519,
+            "f1": 0.9990867579908677,
+            "support": 548
+          },
+          "lean_insufficient": {
+            "precision": 0.9923076923076923,
+            "recall": 1.0,
+            "f1": 0.9961389961389961,
+            "support": 129
+          },
+          "arms_not_stacked": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 162
+          },
+          "knees_uneven": {
+            "precision": 0.9642857142857143,
+            "recall": 0.9878048780487805,
+            "f1": 0.9759036144578312,
+            "support": 82
+          },
+          "elbow_angle_wrong": {
+            "precision": 0.9795918367346939,
+            "recall": 1.0,
+            "f1": 0.9896907216494846,
+            "support": 192
+          }
+        }
+      },
+      "errors_hybrid": {
+        "micro_f1": 0.9992313604919294,
+        "macro_f1": 0.9993977770905694,
+        "exact_match": 0.9978125,
+        "correct_vs_incorrect": {
+          "accuracy": 0.9996875,
+          "precision_incorrect": 0.9994969818913481,
+          "recall_incorrect": 1.0,
+          "f1_incorrect": 0.999748427672956
+        },
+        "per_error": {
+          "straight_knee_bent": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 449
+          },
+          "bent_knee_shallow": {
+            "precision": 0.9988304093567252,
+            "recall": 0.9988304093567252,
+            "f1": 0.9988304093567252,
+            "support": 855
+          },
+          "arms_low": {
+            "precision": 1.0,
+            "recall": 0.9947368421052631,
+            "f1": 0.9973614775725593,
+            "support": 190
+          },
+          "arms_not_level": {
+            "precision": 0.9987293519695044,
+            "recall": 0.9974619289340102,
+            "f1": 0.998095238095238,
+            "support": 788
+          },
+          "elbows_bent": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 530
+          },
+          "torso_lean": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 629
+          },
+          "stance_narrow": {
+            "precision": 0.9981785063752276,
+            "recall": 1.0,
+            "f1": 0.999088422971741,
+            "support": 548
+          },
+          "lean_insufficient": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 129
+          },
+          "arms_not_stacked": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 162
+          },
+          "knees_uneven": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 82
+          },
+          "elbow_angle_wrong": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 192
+          }
+        }
+      }
+    },
+    "synthetic_test_noisy": {
+      "name": "synthetic_test_noisy (noise x3.0, unseen)",
+      "n": 4000,
+      "pose": {
+        "accuracy": 0.99175,
+        "macro_f1": 0.9917512883874637,
+        "confusion": [
+          [
+            800,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            785,
+            2,
+            6,
+            7
+          ],
+          [
+            0,
+            2,
+            796,
+            0,
+            2
+          ],
+          [
+            0,
+            3,
+            0,
+            789,
+            8
+          ],
+          [
+            0,
+            2,
+            0,
+            1,
+            797
+          ]
+        ]
+      },
+      "errors_dl": {
+        "micro_f1": 0.993374508702976,
+        "macro_f1": 0.9948682421703602,
+        "exact_match": 0.9821875,
+        "correct_vs_incorrect": {
+          "accuracy": 0.9971875,
+          "precision_incorrect": 0.9958911145351823,
+          "recall_incorrect": 0.9994845360824742,
+          "f1_incorrect": 0.9976845896578338
+        },
+        "per_error": {
+          "straight_knee_bent": {
+            "precision": 0.9933920704845814,
+            "recall": 0.9977876106194691,
+            "f1": 0.9955849889624724,
+            "support": 452
+          },
+          "bent_knee_shallow": {
+            "precision": 0.9975874547647768,
+            "recall": 1.0,
+            "f1": 0.9987922705314011,
+            "support": 827
+          },
+          "arms_low": {
+            "precision": 1.0,
+            "recall": 0.9942857142857143,
+            "f1": 0.9971346704871061,
+            "support": 175
+          },
+          "arms_not_level": {
+            "precision": 0.9821200510855683,
+            "recall": 0.9948253557567918,
+            "f1": 0.9884318766066839,
+            "support": 773
+          },
+          "elbows_bent": {
+            "precision": 0.9519408502772643,
+            "recall": 0.998062015503876,
+            "f1": 0.9744560075685904,
+            "support": 516
+          },
+          "torso_lean": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 603
+          },
+          "stance_narrow": {
+            "precision": 0.9929824561403509,
+            "recall": 0.9982363315696648,
+            "f1": 0.9956024626209322,
+            "support": 567
+          },
+          "lean_insufficient": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 125
+          },
+          "arms_not_stacked": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 165
+          },
+          "knees_uneven": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 74
+          },
+          "elbow_angle_wrong": {
+            "precision": 0.9935483870967742,
+            "recall": 0.9935483870967742,
+            "f1": 0.9935483870967742,
+            "support": 155
+          }
+        }
+      },
+      "errors_rules_window": {
+        "micro_f1": 0.9974113674732695,
+        "macro_f1": 0.9983569491421498,
+        "exact_match": 0.9928125,
+        "correct_vs_incorrect": {
+          "accuracy": 0.9953125,
+          "precision_incorrect": 0.9923273657289002,
+          "recall_incorrect": 1.0,
+          "f1_incorrect": 0.9961489088575096
+        },
+        "per_error": {
+          "straight_knee_bent": {
+            "precision": 0.9977924944812362,
+            "recall": 1.0,
+            "f1": 0.9988950276243094,
+            "support": 452
+          },
+          "bent_knee_shallow": {
+            "precision": 0.998792270531401,
+            "recall": 1.0,
+            "f1": 0.9993957703927493,
+            "support": 827
+          },
+          "arms_low": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 175
+          },
+          "arms_not_level": {
+            "precision": 0.9847133757961783,
+            "recall": 1.0,
+            "f1": 0.9922978177150192,
+            "support": 773
+          },
+          "elbows_bent": {
+            "precision": 0.9847036328871893,
+            "recall": 0.998062015503876,
+            "f1": 0.9913378248315687,
+            "support": 516
+          },
+          "torso_lean": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 603
+          },
+          "stance_narrow": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 567
+          },
+          "lean_insufficient": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 125
+          },
+          "arms_not_stacked": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 165
+          },
+          "knees_uneven": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 74
+          },
+          "elbow_angle_wrong": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 155
+          }
+        }
+      },
+      "errors_rules_single_frame": {
+        "micro_f1": 0.8916819946862865,
+        "macro_f1": 0.8922663243360173,
+        "exact_match": 0.7365625,
+        "correct_vs_incorrect": {
+          "accuracy": 0.8740625,
+          "precision_incorrect": 0.8285592133390338,
+          "recall_incorrect": 0.9989690721649485,
+          "f1_incorrect": 0.9058191166160318
+        },
+        "per_error": {
+          "straight_knee_bent": {
+            "precision": 0.7801801801801802,
+            "recall": 0.9579646017699115,
+            "f1": 0.8599801390268123,
+            "support": 452
+          },
+          "bent_knee_shallow": {
+            "precision": 0.9412442396313364,
+            "recall": 0.9879081015719468,
+            "f1": 0.9640117994100295,
+            "support": 827
+          },
+          "arms_low": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 175
+          },
+          "arms_not_level": {
+            "precision": 0.7928496319663512,
+            "recall": 0.9754204398447607,
+            "f1": 0.8747099767981437,
+            "support": 773
+          },
+          "elbows_bent": {
+            "precision": 0.5496760259179265,
+            "recall": 0.9864341085271318,
+            "f1": 0.7059639389736477,
+            "support": 516
+          },
+          "torso_lean": {
+            "precision": 0.953968253968254,
+            "recall": 0.9966832504145937,
+            "f1": 0.9748580697485808,
+            "support": 603
+          },
+          "stance_narrow": {
+            "precision": 0.9876543209876543,
+            "recall": 0.9876543209876543,
+            "f1": 0.9876543209876543,
+            "support": 567
+          },
+          "lean_insufficient": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 125
+          },
+          "arms_not_stacked": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 165
+          },
+          "knees_uneven": {
+            "precision": 0.6,
+            "recall": 0.9324324324324325,
+            "f1": 0.73015873015873,
+            "support": 74
+          },
+          "elbow_angle_wrong": {
+            "precision": 0.5595667870036101,
+            "recall": 1.0,
+            "f1": 0.7175925925925926,
+            "support": 155
+          }
+        }
+      },
+      "errors_hybrid": {
+        "micro_f1": 0.9947173204450938,
+        "macro_f1": 0.9957925295686919,
+        "exact_match": 0.985625,
+        "correct_vs_incorrect": {
+          "accuracy": 0.9978125,
+          "precision_incorrect": 0.9969151670951156,
+          "recall_incorrect": 0.9994845360824742,
+          "f1_incorrect": 0.9981981981981982
+        },
+        "per_error": {
+          "straight_knee_bent": {
+            "precision": 0.9955849889624724,
+            "recall": 0.9977876106194691,
+            "f1": 0.9966850828729282,
+            "support": 452
+          },
+          "bent_knee_shallow": {
+            "precision": 0.9975874547647768,
+            "recall": 1.0,
+            "f1": 0.9987922705314011,
+            "support": 827
+          },
+          "arms_low": {
+            "precision": 1.0,
+            "recall": 0.9942857142857143,
+            "f1": 0.9971346704871061,
+            "support": 175
+          },
+          "arms_not_level": {
+            "precision": 0.9846743295019157,
+            "recall": 0.9974126778783958,
+            "f1": 0.9910025706940874,
+            "support": 773
+          },
+          "elbows_bent": {
+            "precision": 0.9644194756554307,
+            "recall": 0.998062015503876,
+            "f1": 0.9809523809523809,
+            "support": 516
+          },
+          "torso_lean": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 603
+          },
+          "stance_narrow": {
+            "precision": 0.9929824561403509,
+            "recall": 0.9982363315696648,
+            "f1": 0.9956024626209322,
+            "support": 567
+          },
+          "lean_insufficient": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 125
+          },
+          "arms_not_stacked": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 165
+          },
+          "knees_uneven": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 74
+          },
+          "elbow_angle_wrong": {
+            "precision": 0.9935483870967742,
+            "recall": 0.9935483870967742,
+            "f1": 0.9935483870967742,
+            "support": 155
+          }
+        }
+      }
+    },
+    "real_test": {
+      "name": "real_test (held-out clips)",
+      "n": 66,
+      "pose": {
+        "accuracy": 1.0,
+        "macro_f1": 0.8,
+        "confusion": [
+          [
+            12,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            18,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            20,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            16,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      "errors_dl": {
+        "micro_f1": 0.0,
+        "macro_f1": 0.0,
+        "exact_match": 0.9848484848484849,
+        "correct_vs_incorrect": {
+          "accuracy": 0.9848484848484849,
+          "precision_incorrect": 0.0,
+          "recall_incorrect": 0.0,
+          "f1_incorrect": 0.0
+        },
+        "per_error": {
+          "straight_knee_bent": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "bent_knee_shallow": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "arms_low": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "arms_not_level": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "elbows_bent": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "torso_lean": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "stance_narrow": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "lean_insufficient": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "arms_not_stacked": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "knees_uneven": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "elbow_angle_wrong": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          }
+        }
+      },
+      "errors_rules_window": {
+        "micro_f1": 0.0,
+        "macro_f1": 0.0,
+        "exact_match": 0.5454545454545454,
+        "correct_vs_incorrect": {
+          "accuracy": 0.5454545454545454,
+          "precision_incorrect": 0.0,
+          "recall_incorrect": 0.0,
+          "f1_incorrect": 0.0
+        },
+        "per_error": {
+          "straight_knee_bent": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "bent_knee_shallow": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "arms_low": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "arms_not_level": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "elbows_bent": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "torso_lean": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "stance_narrow": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "lean_insufficient": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "arms_not_stacked": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "knees_uneven": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "elbow_angle_wrong": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          }
+        }
+      },
+      "errors_rules_single_frame": {
+        "micro_f1": 0.0,
+        "macro_f1": 0.0,
+        "exact_match": 0.5454545454545454,
+        "correct_vs_incorrect": {
+          "accuracy": 0.5454545454545454,
+          "precision_incorrect": 0.0,
+          "recall_incorrect": 0.0,
+          "f1_incorrect": 0.0
+        },
+        "per_error": {
+          "straight_knee_bent": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "bent_knee_shallow": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "arms_low": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "arms_not_level": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "elbows_bent": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "torso_lean": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "stance_narrow": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "lean_insufficient": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "arms_not_stacked": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "knees_uneven": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "elbow_angle_wrong": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          }
+        }
+      },
+      "errors_hybrid": {
+        "micro_f1": 0.0,
+        "macro_f1": 0.0,
+        "exact_match": 0.9848484848484849,
+        "correct_vs_incorrect": {
+          "accuracy": 0.9848484848484849,
+          "precision_incorrect": 0.0,
+          "recall_incorrect": 0.0,
+          "f1_incorrect": 0.0
+        },
+        "per_error": {
+          "straight_knee_bent": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "bent_knee_shallow": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "arms_low": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "arms_not_level": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "elbows_bent": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "torso_lean": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "stance_narrow": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "lean_insufficient": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "arms_not_stacked": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "knees_uneven": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "elbow_angle_wrong": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          }
+        }
+      }
+    }
+  },
+  "args": {
+    "train_n": 5000,
+    "val_n": 600,
+    "test_n": 800,
+    "epochs": 30,
+    "batch": 128,
+    "lr": 0.002,
+    "patience": 7,
+    "real_dir": "data/clips",
+    "real_repeat": 5,
+    "seed": 0,
+    "out": "outputs",
+    "model_out": "models/yogacoach.pt"
+  },
+  "params": 230751
+}
